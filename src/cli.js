@@ -75,10 +75,11 @@ const cli = argv => {
   }
 
   for (const file of files) {
+    console.log('try to convert file: '+file);
     const inFile = file;
-    const inCode = fs.readFileSync(inFile, "utf-8");
 
     try {
+      const inCode = fs.readFileSync(inFile, "utf-8");
       const outCode = convert(inCode, options);
 
       if (program.write) {
